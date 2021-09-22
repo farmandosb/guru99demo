@@ -1,0 +1,25 @@
+Test Case #01
+
+Enter valid userid & password
+
+Steps
+1) Go to http://www.demo.guru99.com/V4/
+2) Enter valid User id
+3) Enter valid Password
+4) Click Login
+5) Verify the output
+
+Test Data
+Userid:
+mngr351354
+Password:
+gEzYpAb
+Expires on 23sep2021
+Use Chrome Browser
+ChromeDriver location: test/resources folder of the project
+Use Configuration.class for load properties from a external file called configuration.properties located in the root of the project
+Implicit wait 10 seconds
+
+Expected Result
+1) Login sucessful
+2) Verify Title of the HomePage
