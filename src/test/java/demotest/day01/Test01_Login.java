@@ -20,18 +20,13 @@ import demotest.Util;
 
 public class Test01_Login {
 	public static void main(String[] args) {
-		Util utils = new Util();
-		utils.setDriverLocation("./src/test/resources/chromedriver/chromedriver.exe");
-		utils.setBaseUrl("http://www.demo.guru99.com/V4/");
-		utils.setUsername("mngr351354");
-		utils.setPassword("gEzYpAb");
 
 		// Setup Driver
-		System.setProperty("webdriver.chrome.driver", utils.getDriverLocation());
+		System.setProperty("webdriver.chrome.driver", Util.DRIVERLOCATION);
 		WebDriver driver = new ChromeDriver();
 
 		// launch Chrome Browser and open the Base URL
-		driver.get(utils.getBaseUrl());
+		driver.get(Util.BASEURL);
 
 		// Enter username
 		driver.findElement(By.name("uid")).sendKeys("mngr351354");
@@ -41,11 +36,10 @@ public class Test01_Login {
 
 		// Click Login
 		driver.findElement(By.name("btnLogin")).click();
-		
-		
-		//Verify manager page is shown
+
+		// Verify manager page is shown
 		driver.findElement(By.tagName("marquee"));
-		
+
 		// Close browser and driver
 		driver.quit();
 

@@ -1,7 +1,5 @@
 package demotest.day02;
 
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,39 +20,28 @@ import demotest.Util;
 
 public class Test01_Login {
 
-	public static Util setupData() {
-		Util utils = new Util();
-		utils.setDriverLocation("./src/test/resources/chromedriver/chromedriver.exe");
-		utils.setBaseUrl("http://www.demo.guru99.com/V4/");
-		utils.setUsername("mngr351354");
-		utils.setPassword("gEzYpAb");
-		return utils;
-
-	}
-
-	public static WebDriver initDriver(Util utils) {
-		System.setProperty("webdriver.chrome.driver", utils.getDriverLocation());
+	public static WebDriver initDriver() {
+		System.setProperty("webdriver.chrome.driver", Util.DRIVERLOCATION);
 		WebDriver driver = new ChromeDriver();
 		return driver;
 	}
 
 	public static void login(String username, String password) {
-		Util utils = setupData();
-		WebDriver driver = initDriver(utils);
+		WebDriver driver = initDriver();
 
 		// launch Chrome Browser and open the Base URL
-		driver.get(utils.getBaseUrl());
+		driver.get(Util.BASEURL);
 
 		// Enter username
-		driver.findElement(By.name("uid")).sendKeys(username);
+		driver.findElement(By.name("uid")).sendKeys(Util.VALID_USERNAME);
 
 		// Enter Password
-		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(By.name("password")).sendKeys(Util.VALID_PASSWORD);
 
 		// Click Login
 		driver.findElement(By.name("btnLogin")).click();
 
-		// Verify manager page is shown
+		// Find welcome page locator
 		driver.findElement(By.tagName("marquee"));
 
 		// Close browser and driver

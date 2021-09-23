@@ -1,35 +1,11 @@
 package demotest;
 
 public class Util {
-	private String driverLocation;
-	private String baseUrl;
-	private String username;
-	private String password;
-	
-	
-	public String getDriverLocation() {
-		return driverLocation;
-	}
-	public void setDriverLocation(String driverLocation) {
-		this.driverLocation = driverLocation;
-	}
-	public String getBaseUrl() {
-		return baseUrl;
-	}
-	public void setBaseUrl(String baseUrl) {
-		this.baseUrl = baseUrl;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	public static final String DRIVERLOCATION = "./src/test/resources/chromedriver/chromedriver.exe";
+	public static final String BASEURL = "http://www.demo.guru99.com/V4/";
+	public static final String VALID_USERNAME = "mngr351354";
+	public static final String VALID_PASSWORD = "gEzYpAb";
+	public static final String INVALID_USERNAME = "mngr0000000";
+	public static final String INVALID_PASSWORD = "gEeEeEe";
 
 }
